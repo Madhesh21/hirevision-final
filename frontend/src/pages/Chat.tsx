@@ -302,7 +302,7 @@ const Chat = () => {
 
       const sessionId = localStorage.getItem('sessionId');
       
-      const response = await fetch("http://localhost:3000/conversation", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/conversation`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -365,7 +365,7 @@ const Chat = () => {
 
       const sessionId = localStorage.getItem('sessionId');
       
-      const response = await fetch("http://localhost:3000/conversation", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/conversation`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -510,7 +510,7 @@ const Chat = () => {
           await evaluateAnswers();
         }
       } else {
-        const response = await fetch("http://localhost:3000/conversation", {
+        const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/conversation`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -125,7 +125,7 @@ const UploadPage = () => {
     formData.append("jobDescription", jobDescription);
     formData.append("userId", user.id);
 
-    const response = await fetch("http://localhost:3000/analyze-ats", {
+    const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/analyze-ats`, {
       method: "POST",
       body: formData,
     });

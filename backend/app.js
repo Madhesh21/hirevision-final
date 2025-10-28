@@ -23,7 +23,9 @@ const cors = require('cors');
 
 
 app.use(cors({
-  origin: 'http://localhost:8080', // Your React app URL
+  origin: process.env.NODE_ENV === 'production' 
+    ? ['https://your-amplify-domain.amplifyapp.com'] 
+    : ['http://localhost:8080'],
   credentials: true
 }));
 app.use('/', indexRouter);
