@@ -24,7 +24,7 @@ const cors = require('cors');
 
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://your-amplify-domain.amplifyapp.com'] 
+    ? ['https://your-amplify-domain.amplifyapp.com', 'http://65.2.3.147:3000'] 
     : ['http://localhost:8080'],
   credentials: true
 }));
